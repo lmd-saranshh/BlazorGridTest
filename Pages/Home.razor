@@ -14,7 +14,7 @@
     <div class="flex flex-grow overflow-hidden bg-stroke">
         <SfSidebar class="mt-12 flex overflow-auto bg-stroke"
                    @bind-IsOpen="SidebarToggle" Type="SidebarType.Push">
-            <div class="flex-none max-w-md h-full overflow-auto border-r border-stroke shadow-card p-2 transition-[width] duration-150 ease-out w-48 lg:w-64")">
+            <div class="flex-none max-w-md h-full overflow-auto border-r border-stroke shadow-card p-2 transition-[width] duration-150 ease-out w-48 lg:w-64" )">
                 <div class="m-0 relative list-none overflow-x-hidden overflow-y-auto overscroll-y-contain text-foreground space-y-0.5 mt-0.5">
                     Testing 1
                 </div>
@@ -55,6 +55,29 @@
                                     EnableVirtualization="true"
                                     AllowGrouping="true">
                                 <GridFilterSettings Type="FilterType.Excel" />
+                                <GridTemplates>
+                                    <DetailTemplate>
+                                        @{
+                                            var transactions = (context as Order);
+                                            var childDetails = Orders.Where(x => x.OrderID == transactions.OrderID);
+                                        }
+                                        <SfGrid TValue="Order"
+                                                DataSource="@childDetails">
+                                            <GridColumns>
+                                                <GridColumn Field="@nameof(Order.Description)"
+                                                            HeaderText="Transaction"
+                                                            Width="35" />
+                                                <GridColumn Field="@nameof(Order.OrderID)"
+                                                            HeaderText="Transaction ID"
+                                                            Width="10"
+                                                            TextAlign="TextAlign.Right" />
+                                            </GridColumns>
+                                        </SfGrid>
+                                    </DetailTemplate>
+                                    <EmptyRecordTemplate>
+                                        No records found!
+                                    </EmptyRecordTemplate>
+                                </GridTemplates>
                                 <GridColumns>
                                     <GridColumn Field=@nameof(Order.OrderID) HeaderText="Order ID" ClipMode="ClipMode.EllipsisWithTooltip"
                                                 TextAlign="TextAlign.Right" Width="120"></GridColumn>
@@ -63,6 +86,12 @@
                                     <GridColumn Field=@nameof(Order.OrderDate) HeaderText=" Order Date ClipMode Test" ClipMode="ClipMode.EllipsisWithTooltip"
                                                 Format="d" Type="ColumnType.Date" TextAlign="TextAlign.Right" Width="130"></GridColumn>
                                     <GridColumn Field=@nameof(Order.Description) HeaderText="DescriptionTestClipmode" ClipMode="ClipMode.EllipsisWithTooltip"
+                                                Width="130"></GridColumn>
+                                    <GridColumn Field=@nameof(Order.Description2) HeaderText="DescriptionTestClipmode" ClipMode="ClipMode.EllipsisWithTooltip"
+                                                Width="130"></GridColumn>
+                                    <GridColumn Field=@nameof(Order.Description2) HeaderText="DescriptionTestClipmode" ClipMode="ClipMode.EllipsisWithTooltip"
+                                                Width="130"></GridColumn>
+                                    <GridColumn Field=@nameof(Order.Description2) HeaderText="DescriptionTestClipmode" ClipMode="ClipMode.EllipsisWithTooltip"
                                                 Width="130"></GridColumn>
                                     <GridColumn Field=@nameof(Order.Description2) HeaderText="DescriptionTestClipmode" ClipMode="ClipMode.EllipsisWithTooltip"
                                                 Width="130"></GridColumn>
