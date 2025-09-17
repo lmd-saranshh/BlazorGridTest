@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlazorGrid",
   "resources": {
-    "hash": "sha256-B6nhzCpF1LIJ9hAktH3Ec6+iQTtrhddt4yq8u+t6GZI=",
+    "hash": "sha256-kct5a1YrWDZ2ejg6/TnB4uaQjv40yAdK5mI/ToIcn7c=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-D0bzod5lwwSzPR43JC8TTCcZKw+3jIHOk8CZFCRj5is="
     },
@@ -95,7 +95,7 @@
       "System.wasm": "sha256-9DLmgOsnmEbjuZrRVFruRmVRvh/skjCDv6hQMjVZ3K8=",
       "netstandard.wasm": "sha256-k1blIbMOFMCNAJ+S0pNaUyGSVd8MKyUJX//Tz4ddqrE=",
       "System.Private.CoreLib.wasm": "sha256-t2uq4tUSIbP8Pp/gYmnBM6hfiruALAz5Siq82SWLtwI=",
-      "BlazorGrid.wasm": "sha256-7ahkp+4WqnHDgPvMYqMe6i6dT2iYdrS3SvS7KxVAapw="
+      "BlazorGrid.wasm": "sha256-tzYt737eMia3o/qra20dxC8DIEdO2fLyak5Lby453pM="
     }
   },
   "cacheBootResources": true,
